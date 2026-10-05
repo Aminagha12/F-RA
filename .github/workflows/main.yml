@@ -1,4 +1,4 @@
-name: Deploy Forex Robot to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -21,12 +21,14 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
+        with:
+          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
